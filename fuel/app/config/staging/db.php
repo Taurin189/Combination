@@ -6,9 +6,9 @@
 return array(
 	'default' => array(
 		'connection'  => array(
-			'dsn'        => 'mysql:host=localhost;dbname=fuel_staging',
+			'dsn'        => 'mysql:host=' . $_ENV['MYSQL_PORT_3306_TCP_ADDR'] .';dbname=combi_stg',
 			'username'   => 'fuel_app',
-			'password'   => 'super_secret_password',
+			'password'   => $_ENV['MYSQL_ENV_MYSQL_ROOT_PASSWORD'],
 		),
 	),
 );
