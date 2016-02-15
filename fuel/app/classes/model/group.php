@@ -28,8 +28,8 @@ class Model_Group extends Model
 			'key_to'         => 'group_id',
 			'cascade_save'   => false,
 			'cascade_delete' => false,
-	],
-];
+		],
+	];
 
 	public static function validate($factory)
 	{
