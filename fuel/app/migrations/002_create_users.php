@@ -2,15 +2,13 @@
 
 namespace Fuel\Migrations;
 
-class Create_members
+class Create_users
 {
 	public function up()
 	{
-		\DBUtil::create_table('members', array(
+		\DBUtil::create_table('users', array(
 			'id' => array('constraint' => 11, 'type' => 'int', 'auto_increment' => true, 'unsigned' => true),
 			'name' => array('constraint' => 50, 'type' => 'varchar'),
-			'user_id' => array('constraint' => 11, 'type' => 'int'),
-			'group_id' => array('constraint' => 11, 'type' => 'int'),
 			'created_at' => array('constraint' => 11, 'type' => 'int', 'null' => true),
 			'updated_at' => array('constraint' => 11, 'type' => 'int', 'null' => true),
 
@@ -19,6 +17,6 @@ class Create_members
 
 	public function down()
 	{
-		\DBUtil::drop_table('members');
+		\DBUtil::drop_table('users');
 	}
 }

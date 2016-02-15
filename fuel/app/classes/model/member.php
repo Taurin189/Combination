@@ -23,6 +23,23 @@ class Model_Member extends Model
 		),
 	);
 
+	protected static $_belongs_to = [
+		'group' => [
+			'key_from' => 'group_id',
+			'model_to' => 'Model_Group',
+			'key_to' => 'id',
+			'cascade_save'   => true,
+      'cascade_delete' => false,
+		],
+		'user' => [
+			'key_from' => 'user_id',
+			'model_to' => 'Model_User',
+			'key_to' => 'id',
+			'cascade_save'   => true,
+			'cascade_delete' => false,
+		]
+	];
+
 	public static function validate($factory)
 	{
 		$val = Validation::forge($factory);

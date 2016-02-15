@@ -5,8 +5,8 @@
 	<thead>
 		<tr>
 			<th>Name</th>
-			<th>User id</th>
-			<th>Group id</th>
+			<th>User Name</th>
+			<th>Group Name</th>
 			<th>&nbsp;</th>
 		</tr>
 	</thead>
@@ -14,8 +14,8 @@
 <?php foreach ($members as $item): ?>		<tr>
 
 			<td><?php echo $item->name; ?></td>
-			<td><?php echo $item->user_id; ?></td>
-			<td><?php echo $item->group_id; ?></td>
+			<td><?php echo $item->user->name; ?></td>
+			<td><?php echo $item->group->name; ?></td>
 			<td>
 				<div class="btn-toolbar">
 					<div class="btn-group">

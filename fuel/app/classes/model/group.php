@@ -21,6 +21,16 @@ class Model_Group extends Model
 		),
 	);
 
+	protected static $_has_many = [
+		'members' => [
+			'key_from'       => 'id',
+			'model_to'       => 'Model_Member',
+			'key_to'         => 'group_id',
+			'cascade_save'   => false,
+			'cascade_delete' => false,
+	],
+];
+
 	public static function validate($factory)
 	{
 		$val = Validation::forge($factory);

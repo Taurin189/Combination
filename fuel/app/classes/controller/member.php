@@ -4,7 +4,7 @@ class Controller_Member extends Controller_Template
 
 	public function action_index()
 	{
-		$data['members'] = Model_Member::find('all');
+		$data['members'] = Model_Member::find('all', ['related' => ['group', 'user']]);
 		$this->template->title = "Members";
 		$this->template->content = View::forge('member/index', $data);
 
