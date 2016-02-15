@@ -14,10 +14,9 @@
 
 		</div>
 		<div class="form-group">
-			<?php echo Form::label('Group id', 'group_id', array('class'=>'control-label')); ?>
+			<?php echo Form::label('Group Name', 'group_name', array('class'=>'control-label')); ?>
 
-				<?php echo Form::input('group_id', Input::post('group_id', isset($member) ? $member->group_id : ''), array('class' => 'col-md-4 form-control', 'placeholder'=>'Group id')); ?>
-
+				<?php echo Form::select('group_name', null, $groups, array('class' => 'col-md-4')); ?>
 		</div>
 		<div class="form-group">
 			<label class='control-label'>&nbsp;</label>

@@ -36,7 +36,7 @@ class Controller_Member extends Controller_Template
 				$member = Model_Member::forge(array(
 					'name' => Input::post('name'),
 					'user_id' => Input::post('user_id'),
-					'group_id' => Input::post('group_id'),
+					'group_id' => Input::post('group_name'),
 				));
 
 				if ($member and $member->save())
@@ -56,10 +56,15 @@ class Controller_Member extends Controller_Template
 				Session::set_flash('error', $val->error());
 			}
 		}
+		$groups = Model_Group::find('all');
+		$group_array = array();
+		foreach ($groups as $group) {
+			$group_array[$group->id] = $group->name;
+		}
+		$this->template->set_global('groups', $group_array, false);
 
 		$this->template->title = "Members";
 		$this->template->content = View::forge('member/create');
-
 	}
 
 	public function action_edit($id = null)

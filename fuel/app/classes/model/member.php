@@ -28,7 +28,7 @@ class Model_Member extends Model
 		$val = Validation::forge($factory);
 		$val->add_field('name', 'Name', 'required|max_length[50]');
 		$val->add_field('user_id', 'User Id', 'required|valid_string[numeric]');
-		$val->add_field('group_id', 'Group Id', 'required|valid_string[numeric]');
+		$val->add_field('group_name', 'Group Name', 'required|valid_string[100]');
 
 		return $val;
 	}

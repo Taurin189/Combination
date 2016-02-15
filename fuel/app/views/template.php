@@ -31,6 +31,28 @@
 <?php endif; ?>
 		</div>
 		<div class="col-md-12">
+			<nav role="navigation">
+				<ul class="nav navbar-nav col-md-12">
+					<li class="">
+						<a href="/combi/public/group">
+							Group
+						</a>
+					</li>
+					<li class="">
+						<a href="/combi/public/member">
+							Member
+						</a>
+					</li>
+					<li class="">
+						<a href="/combi/public/user">
+							User
+						</a>
+					</li>
+				</ul>
+				<br>
+			</nav>
+		</div>
+		<div class="col-md-12">
 <?php echo $content; ?>
 		</div>
 		<footer>
