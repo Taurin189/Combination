@@ -40,6 +40,16 @@ class Model_Member extends Model
 		]
 	];
 
+	protected static $_has_many = [
+		'records' => [
+			'key_from'       => 'id',
+			'model_to'       => 'Model_Combi_Record',
+			'key_to'         => 'member_id',
+			'cascade_save'   => false,
+			'cascade_delete' => false,
+		],
+	];
+
 	public static function validate($factory)
 	{
 		$val = Validation::forge($factory);
