@@ -9,7 +9,7 @@ class Create_points
 		\DBUtil::create_table('points', array(
 			'id' => array('constraint' => 11, 'type' => 'int', 'auto_increment' => true, 'unsigned' => true),
 			'user_id1' => array('constraint' => 11, 'type' => 'int'),
-			'nuser_id2' => array('constraint' => 11, 'type' => 'int'),
+			'user_id2' => array('constraint' => 11, 'type' => 'int'),
 			'point' => array('constraint' => 11, 'type' => 'int'),
 
 		), array('id'));
