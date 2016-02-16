@@ -20,11 +20,19 @@ class Controller_Combination extends Controller_Template
       if($shuffle) {
         $latest->num = (int)$latest->num + 1;
         $latest->save();
+
+        // メッセージを表示し、リダイレクトする
+        Session::set_flash('success', 'Shuffle Success.');
+        Response::redirect('combination');
       }
     }
     $data['latest'] = $latest->num;
-    $data['combi'] = Model_Combi_Table::find('all');
+    $data['combi'] = Model_Combi_Record::get_table($latest->num);
 		$this->template->title = "Combination";
 		$this->template->content = View::forge('combi/index', $data);
+  }
+
+  private function shuffle_group() {
+
   }
 }
